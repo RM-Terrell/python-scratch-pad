@@ -1,0 +1,11 @@
+{
+    "version": "0.2",
+    "language": "en,fr,no",
+    "words": [
+        "pytest",
+        "devcontainer",
+        "pyproject",
+        "virtualenv",
+        "mypy"
+    ]
+}

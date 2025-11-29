@@ -1,0 +1,47 @@
+{
+    "name": "Python Scratch Pad",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {
+            "setLocale": true,
+            "theme": "robbyrussell",
+            "plugins": "git docker",
+            "desiredLocale": "en_US.UTF-8 UTF-8"
+        }
+    },
+    "workspaceFolder": "/workspaces/python-scratch-pad",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "tamasfe.even-better-toml",
+                "ms-python.python",
+                "ms-python.debugpy",
+                "charliermarsh.ruff",
+                "DavidAnson.vscode-markdownlint",
+                "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-french",
+                "streetsidesoftware.code-spell-checker-norwegian-bokmal",
+                "aaron-bond.better-comments"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "python.defaultInterpreterPath": ".venv/bin/python",
+                "python.testing.pytestEnabled": true,
+                "python.testing.unittestEnabled": false,
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": "explicit",
+                        "source.organizeImports": "explicit"
+                    }
+                }
+            }
+        }
+    },
+
+    "postCreateCommand": "uv sync",
+    "forwardPorts": []
+}
