@@ -1,8 +1,8 @@
-# Python 3.14 Scratch Pad
+# Python Scratch Pad
 
 A lightweight, isolated development environment designed for writing Python code, solving algorithm challenges, running benchmarks, or any other Python experimentation without polluting or depending on your local machine.
 
-Built on **VS Code Dev Containers**, this project provides a zero-configuration setup for Python code using the latest, fastest tooling available.
+Built on VS Code Dev Containers, this project provides a zero-configuration setup for Python code using the latest, fastest tooling available.
 
 ## Current Features
 
@@ -25,7 +25,7 @@ Built on **VS Code Dev Containers**, this project provides a zero-configuration 
 1. Clone this repository onto your local machine (host OS shouldn't matter)
 2. Open the folder in VS Code (`cd /into/your/dir/path` and `code .`)
 3. A popup will appear asking to **"Reopen in Container"**. Click it.
-    * *Alternatively: Open Command Palette (`Cmd+Shift+P`) -> "Dev Containers: Reopen in Container".*
+    * Alternatively: Open Command Palette (`Cmd+Shift+P`) -> "Dev Containers: Reopen in Container".
 
 The container will build, install Python, and sync dependencies automatically.
 
