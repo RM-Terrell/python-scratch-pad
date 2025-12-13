@@ -1,29 +1,29 @@
 import pytest
 
-
-# --- Sample functions ---
-def divide(a, b):
-    if b == 0:
-        raise ValueError("cannot divide by zero")
-    return a / b
-
-
-def get_status_code(status):
-    if status == "OK":
-        return 200
-    return 404
-
-
-# --- The Tests ---
+import main.functions as functions
 
 
 def test_simple_assertion():
-    result = get_status_code("OK")
+    result = functions.get_status_code("OK")
     assert result == 200
 
 
-# Table-Driven Tests (Go style: []struct{name, input, want})
-# In Python, we use the @pytest.mark.parametrize decorator.
+def test_negative_zero():
+    result = functions.negative(0)
+    assert result == 0
+
+
+def test_negative_negative():
+    result = functions.negative(-1)
+    assert result == -1
+
+
+def test_negative_positive():
+    result = functions.negative(1)
+    assert result == -1
+
+
+# Table-Driven Tests
 @pytest.mark.parametrize(
     "input_str, expected",
     [
@@ -33,13 +33,13 @@ def test_simple_assertion():
     ],
 )
 def test_status_codes_table(input_str, expected):
-    assert get_status_code(input_str) == expected
+    assert functions.get_status_code(input_str) == expected
 
 
 # Testing Errors/Panics
 def test_divide_by_zero():
     with pytest.raises(ValueError, match="cannot divide by zero"):
-        divide(10, 0)
+        functions.divide(10, 0)
 
 
 # Floating Point Comparison
